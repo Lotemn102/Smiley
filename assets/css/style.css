@@ -1,0 +1,357 @@
+ /*
+	Author: Lotem Nadir
+*/
+
+
+/* TABLE OF CONTENTS
+	1. Basics
+	2. Tabs.
+	3. Buttons
+	
+*/
+ 
+ 
+ /* 1. BASIC STYLES */
+ 
+	html, body {
+	  height: 100%;
+	  margin: 0;
+	}
+
+	#content {
+	  min-height: 100%;
+
+	  /* Equal to height of footer */
+	  /* But also accounting for potential margin-bottom of last child */
+	  margin-bottom: -20px;
+	}
+	#footer {
+	  height: 30px;
+	  border: 1px solid #ccc;
+	  background-color: #f1f1f1;
+	  text-align: center;
+	}
+
+	#fill_div{
+		width: 178px;
+		height: 220px;
+		align: center;
+		
+	}
+
+	@font-face {
+		font-family: Assistant;
+		src: url('../fonts/Assistant-Regular.ttf');
+	}
+
+
+	@keyframes fadeEffect {
+		from {opacity: 0;}
+		to {opacity: 1;}
+	}
+	
+
+ 
+ /* 2. TABS */
+ 
+	.tab {
+		overflow: hidden;
+		border: 1px solid #ccc;
+		background-color: #f1f1f1;
+		text-align: center;
+		align-content: center;
+		justify-content: center;
+	}
+
+	.tab button {
+		background-color: inherit;
+		display: inline-block;
+		float: none;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		padding: 20px 14px;
+		transition: 0.1s;
+	}
+
+	.tabcontent {
+		text-align: center;
+		align-content: center;
+		justify-content: center;
+		display: none;
+		padding: 6px;
+		border: 1px solid #ccc;
+		border-top: none;
+		/* Fade effect when changing tabs */
+		animation: fadeEffect 1s; 
+	}
+	
+	.tabcontent button{
+		background-color: inherit;
+		display: inline-block;
+		float: none;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		padding: 20px 14px;
+		transition: 0.1s;
+	}
+ 
+
+ /* 3. BUTTONS */
+ 
+	button#activitybtn{
+		background:url('../img/basketball.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		background-repeat: no-repeat;
+		width:22px;
+		height:22px;
+	}
+
+	button#activitybtn:hover{
+		background:url('../img/basketball2.png');
+		background-size: 24px 24px;
+		background-position: center; 
+		background-repeat: no-repeat;
+		width:24px;
+		height:24px;
+	}
+
+	button#activitybtn.active{
+		background:url('../img/basketball2.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		background-repeat: no-repeat;
+		width:22px;
+		height:22px;
+	}
+
+	button#flagsbtn{
+		background:url('../img/flag.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		background-repeat: no-repeat;
+		width:22px;
+		height:22px;
+	}
+
+	button#flagsbtn:hover{
+		background:url('../img/flag2.png');
+		background-size: 24px 24px;
+		background-position: center; 
+		background-repeat: no-repeat;
+		width:22px;
+		height:22px;
+	}
+
+	button#flagsbtn.active{
+		background:url('../img/flag2.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		background-repeat: no-repeat;
+		width:22px;
+		height:22px;
+	}
+
+	button#foodbtn{
+		background:url('../img/apple.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		background-repeat: no-repeat;
+		width:22px;
+		height:22px;
+	}
+
+	button#foodbtn:hover{
+		background:url('../img/apple2.png');
+		background-size: 24px 24px;
+		background-position: center; 
+		background-repeat: no-repeat;
+		width:22px;
+		height:22px;
+	}
+
+	button#foodbtn.active{
+		background:url('../img/apple2.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		background-repeat: no-repeat;
+		width:22px;
+		height:22px;
+	}
+
+	button#naturebtn{
+		background:url('../img/dog.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		background-repeat: no-repeat;
+		width:22px;
+		height:22px;
+	}
+
+	button#naturebtn:hover{
+		background:url('../img/dog2.png');
+		background-size: 24px 24px;
+		background-position: center; 
+		background-repeat: no-repeat;
+		width:22px;
+		height:22px;
+	}
+
+	button#naturebtn.active{
+		background:url('../img/dog2.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		background-repeat: no-repeat;
+		width:22px;
+		height:22px;
+	}
+
+	button#objectsbtn{
+		background:url('../img/pencil.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		background-repeat: no-repeat;
+		width:22px;
+		height:22px;
+	}
+
+	button#objectsbtn:hover{
+		background:url('../img/pencil2.png');
+		background-size: 24px 24px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+
+	button#objectsbtn.active{
+		background:url('../img/pencil2.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+
+	button#peoplebtn{
+		background:url('../img/smile.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+
+	button#peoplebtn:hover{
+		background:url('../img/smile2.png');
+		background-size: 24px 24px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+
+	button#peoplebtn.active{
+		background:url('../img/smile2.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+
+	button#symbolsbtn{
+		background:url('../img/heart.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+
+	button#symbolsbtn:hover{
+		background:url('../img/heart2.png');
+		background-size: 24px 24px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+
+	button#symbolsbtn.active{
+		background:url('../img/heart2.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+
+	button#travelbtn{
+		background:url('../img/car.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+
+	button#travelbtn:hover{
+		background:url('../img/car2.png');
+		background-size: 24px 24px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+
+	button#travelbtn.active{
+		background:url('../img/car2.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+
+	button#recentbtn{
+		background:url('../img/clock.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+
+	button#recentbtn:hover{
+		background:url('../img/clock2.png');
+		background-size: 24px 24px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+
+	button#recentbtn.active{
+		background:url('../img/clock2.png');
+		background-size: 22px 22px;
+		background-position: center; 
+		width:22px;
+		height:22px;
+		background-repeat: no-repeat;
+	}
+	
+	.btn_emoji{
+		height: 22px;
+		width: 22px;
+		background-size: 20px, 20px !important;
+		background-repeat: no-repeat !important;
+	}
+
+	.btn_emoji:hover{
+		background-size: 24px, 24px !important;
+	}
+
+

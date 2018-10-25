@@ -1,0 +1,131 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Smiley</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<script src="script.js"></script>
+	</head>
+
+	<body>
+		<div id="content">
+			 <!-- Tab links -->
+			<div class="tab">
+			  <button class="tablinks" id="recentbtn" title="Recent" onclick="openCategory(event, 'recent')"></button>
+			  <button class="tablinks" id="activitybtn" title="Sport" onclick="openCategory(event, 'activity')"></button>
+			  <button class="tablinks" id="flagsbtn" title="Flags" onclick="openCategory(event, 'flags')"></button>
+			  <button class="tablinks" id="foodbtn" title="Food" onclick="openCategory(event, 'food')"></button>
+			  <button class="tablinks" id="naturebtn" title="Nature" onclick="openCategory(event, 'nature')"></button>
+			  <button class="tablinks" id="objectsbtn" title="Objects" onclick="openCategory(event, 'objects')"></button>
+			  <button class="tablinks" id="peoplebtn" title="People" onclick="openCategory(event, 'smileys')"></button>
+			  <button class="tablinks" id="symbolsbtn" title="Symbols" onclick="openCategory(event, 'symbols')"></button>
+			  <button class="tablinks" id="travelbtn" title="Travel"  onclick="openCategory(event, 'travel')"></button>
+			</div>
+
+			<!-- Tab content -->
+			<div id="activity" class="tabcontent"></div>
+			<div id="flags" class="tabcontent"></div>
+			<div id="food" class="tabcontent"></div>
+			<div id="nature" class="tabcontent"></div>
+			<div id="objects" class="tabcontent"></div>
+			<div id="smileys" class="tabcontent"></div>
+			<div id="symbols" class="tabcontent"></div>
+			<div id="travel" class="tabcontent"></div>
+			<div id="recent" class="tabcontent"></div>
+		</div>
+
+		<script>
+			const fs = require('fs');
+			const path = require('path');
+
+			// Set the "people" tab as the default tab by clicking on it.
+			document.getElementById("peoplebtn").click();
+
+			// Create div for place holder until user choses at least 1 emoji for the "recent" tab.
+			var recent = document.getElementById("recent");
+			if (recent.innerHTML === ''){
+				var div = document.createElement("div");
+				div.id = 'fill_div';
+				recent.appendChild(div);
+			}
+
+			// Get all the images' names.
+			var string_activity = fs.readFileSync(path.join(__dirname, "assets/text_files/activity.txt"),'utf8');
+			var string_flags = fs.readFileSync(path.join(__dirname, "assets/text_files/flags.txt"),'utf8');
+			var string_food = fs.readFileSync(path.join(__dirname, "assets/text_files/food.txt"),'utf8');
+			var string_nature = fs.readFileSync(path.join(__dirname, "assets/text_files/nature.txt"),'utf8');
+			var string_objects = fs.readFileSync(path.join(__dirname, "assets/text_files/objects.txt"),'utf8');
+			var string_smileys = fs.readFileSync(path.join(__dirname, "assets/text_files/smileys.txt"),'utf8');
+			var string_symbols = fs.readFileSync(path.join(__dirname, "assets/text_files/symbols.txt"),'utf8');
+			var string_travel = fs.readFileSync(path.join(__dirname, "assets/text_files/travel.txt"),'utf8');
+
+			// Function to create emojis' buttons and add their images to them.
+			function add_tab_content (folder, string){
+				var split = string.split(',');
+				var length = split.length;
+
+				for(let i=0; i < length; i++){
+					var btn = document.createElement("button");
+					btn.className = "btn_emoji"; // For the css later.
+					btn.id = split[i];
+					btn.style.background = "url(./assets/emoji/" + folder + '/png_24/' + split[i] + ")";
+					btn.onclick = function () { copyImg(folder, split[i]); add2recent(folder, split[i]) };
+
+					var parent  = document.getElementById(folder);
+					parent.appendChild(btn);
+				}
+			}
+
+			add_tab_content("activity", string_activity);
+			add_tab_content("flags", string_flags);
+			add_tab_content("food", string_food);
+			add_tab_content("nature", string_nature);
+			add_tab_content("objects", string_objects);
+			add_tab_content("smileys", string_smileys);
+			add_tab_content("symbols", string_symbols);
+			add_tab_content("travel", string_travel);
+
+			// Function to add the last used emojis to the "recent" tab. The tab contains maximum of 36 emojis.
+			function add2recent(folder, string) {
+				document.getElementById("fill_div").style.display = "none";
+
+				var parent = document.getElementById("recent");
+				var all_buttons = parent.getElementsByClassName("btn_emoji");
+				var list = [];
+
+				for (var t = 0; t < all_buttons.length; t++){
+					list.push(all_buttons[t].name);
+				}
+
+				// Check if reached max allowed emojis.
+				if (all_buttons.length > 35){
+					// Delete the oldest element.
+					document.getElementById('36').remove();
+				}
+
+				// Check if emoji is not already in the tab.
+				if (!list.includes(string)) {
+					// Update all the elements ids.
+					for (var k = 0; k < all_buttons.length; k++){
+					all_buttons[k].id = parseInt(all_buttons[k].id) + 1;
+					}
+
+					// Add the emoji to the tab.
+					var btn = document.createElement("button");
+					btn.className = "btn_emoji";
+					btn.style.background = "url(./assets/emoji/" + folder + '/png_24/' + string + ")";
+					btn.onclick = function () { copyImg(folder, string); };
+					btn.name = string;
+					btn.id = 1;
+					parent.appendChild(btn);
+				}
+			}
+		</script>
+	 </body>
+
+	 <div id="footer" dir="rtl" style="font-family: Assistant; font-size: 10px;">
+		Download all emojis
+		<a href="./assets/all_emoji.rar" download="./assets/all_emoji.rar">here</a>
+		<p style="margin-top: 3px; font-size: 10px;">Lotem Nadir © 2018</p>
+	 </div>
+
+ </html>
