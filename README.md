@@ -6,6 +6,8 @@ The user clicks on a chosen emoji. The app copies the emoji to the user clipboar
 
 Example:
 
+![](example_s.gif)
+
 ## Setup
 Setup file for Windows can be found [here]().
 
