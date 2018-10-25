@@ -2,7 +2,9 @@
 An offline Electron app for using emojis in Office apps, chat apps and websites.
 
 ## Usage
-The user clicks on a chosen emoji. The app copies the emoji to the user clipboard. The user can then paste it wherever he wants.
+* Pick an emoji. 
+* The app will copy your emoji to your clipboard.
+* Paste the emoji wherever you want.
 
 Example:
 
