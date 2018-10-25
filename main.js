@@ -20,10 +20,10 @@ function createWindow () {
 
 	const trayMenuTemplate =
 					[
-					   { label: 'פתח חלון', click:  function(){
+					   { label: 'Open', click:  function(){
 						   win.show();
 					   } },
-					   { label: 'יציאה', click:  function(){
+					   { label: 'Close', click:  function(){
 						   app.isQuiting = true;
 						   app.quit();
 					   } }
