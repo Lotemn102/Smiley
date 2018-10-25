@@ -1,4 +1,4 @@
-# Smiley
+# Smiley ![](assets/icon/happy32.png)
 An offline Electron app for using emojis in Office apps, chat apps and websites.
 
 ## Usage
