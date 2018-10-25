@@ -9,7 +9,7 @@ Example:
 ![](example_s.gif)
 
 ## Setup
-Setup file for Windows can be found [here]().
+Setup file for Windows can be found here: [part1](https://github.com/Lotemn102/Smiley/raw/master/smiley-win32-setup-x64.part1.rar), [part2](https://github.com/Lotemn102/Smiley/raw/master/smiley-win32-setup-x64.part2.rar), [part3](https://github.com/Lotemn102/Smiley/raw/master/smiley-win32-setup-x64.part3.rar).
 
 ## Built With
 * [Electron](https://electronjs.org/)
