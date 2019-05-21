@@ -16,4 +16,3 @@ Setup file for the desktop app for Windows (32bit) can be found here: [part1](ht
 ## Built With
 * [Electron](https://electronjs.org/)
 * [This](https://github.com/eladkarako/whatsapp-emoji) emojis collection
-* Love
